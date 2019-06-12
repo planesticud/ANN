@@ -23,6 +23,7 @@ func init() {
 	orm.RegisterModel(new(Usuario))
 }
 
+// chupalino se va
 // AddUsuario insert a new Usuario into database and returns
 // last inserted Id on success.
 func AddUsuario(m *Usuario) (id int64, err error) {
