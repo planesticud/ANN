@@ -33,7 +33,7 @@ steps:
       from_secret: usdocker
     password:
       from_secret: psdocker
-    repo: planesticud/${DRONE_REPO##planesticud/}
+    repo: planesticud/ann
     tags:
     - ${DRONE_COMMIT:0:7}
     - latest
