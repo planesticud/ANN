@@ -1,5 +1,4 @@
-FROM python:3
-RUN pip install awscli
+FROM golang:1.11
 WORKDIR /
 COPY entrypoint.sh entrypoint.sh
 COPY main main
