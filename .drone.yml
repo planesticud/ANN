@@ -14,9 +14,6 @@ workspace:
 steps:
 - name: build
   image: golang:1.11
-  environment:
-    ANN_CRUD__PGURLS:
-      from_secret: ann_crud__pgurls
   commands:
   - go get -t
   - GOOS=linux GOARCH=amd64 go build -o main
