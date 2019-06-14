@@ -1,5 +1,0 @@
-
-#!/usr/bin/env bash
-
-
-ANN_CRUD__PGURLS=$ANN_CRUD__PGURLS ANN_CRUD_HTTP_PORT=$ANN_CRUD_HTTP_PORT ./main 

@@ -6,6 +6,7 @@ import (
 	"github.com/astaxie/beego/plugins/cors"
 	_ "github.com/lib/pq"
 	_ "github.com/planesticud/ANN/routers"
+	"github.com/udistrital/utils_oas/apiStatusLib"
 )
 
 func init() {
@@ -31,6 +32,6 @@ func main() {
 		ExposeHeaders:    []string{"Content-Length"},
 		AllowCredentials: true,
 	}))
-
+	apistatus.Init()
 	beego.Run()
 }

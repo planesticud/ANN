@@ -16,9 +16,7 @@ steps:
   image: golang:1.11
   commands:
   - go get -t
-  - GOOS=linux GOARCH=amd64 go build -o main
-  - go get -u gopkg.in/alecthomas/gometalinter.v1
-  - gometalinter.v1 --install     
+  - GOOS=linux GOARCH=amd64 go build -o main     
   when:
     branch: 
     - master

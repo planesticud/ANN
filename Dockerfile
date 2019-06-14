@@ -1,7 +1,5 @@
 FROM golang:1.11
 WORKDIR /
-COPY entrypoint.sh entrypoint.sh
 COPY main main
 COPY conf/app.conf conf/app.conf
-RUN chmod +x main entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+CMD ANN_CRUD__PGURLS=$ANN_CRUD__PGURLS ANN_CRUD_HTTP_PORT=$ANN_CRUD_HTTP_PORT ./main
