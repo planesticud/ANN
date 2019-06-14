@@ -20,7 +20,6 @@ steps:
   commands:
   - go get -t
   - GOOS=linux GOARCH=amd64 go build -o main
-  - ANN_CRUD__PGURLS=$ANN_CRUD__PGURLS ./main orm syncdb -db="default" -force=true -v=true
   when:
     branch: 
     - master
