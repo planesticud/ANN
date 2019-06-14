@@ -10,11 +10,11 @@ import (
 )
 
 func init() {
-	orm.RegisterDataBase("default", "postgres", "postgres://postgres:123456@/db_oas2?sslmode=disable")
+	orm.RegisterDataBase("default", "postgres", beego.AppConfig.String("sqlconn"))
 }
 
 func main() {
-	orm.Debug = true
+
 	orm.RegisterDataBase("default", "postgres", beego.AppConfig.String("sqlconn"))
 	if beego.BConfig.RunMode == "dev" {
 		beego.BConfig.WebConfig.DirectoryIndex = true
@@ -32,6 +32,8 @@ func main() {
 		ExposeHeaders:    []string{"Content-Length"},
 		AllowCredentials: true,
 	}))
+
 	apistatus.Init()
+	orm.RunCommand()
 	beego.Run()
 }
