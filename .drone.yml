@@ -14,9 +14,13 @@ workspace:
 steps:
 - name: build
   image: golang:1.11
+  environment:
+    ANN_CRUD__PGURLS:
+      from_secret: an_crud__pgurls
   commands:
   - go get -t
   - GOOS=linux GOARCH=amd64 go build -o main
+  - ANN_CRUD__PGURLS=$ANN_CRUD__PGURLS ./main orm syncdb -db="default" -force=true -v=true
   when:
     branch: 
     - master
